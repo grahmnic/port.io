@@ -1,0 +1,21 @@
+.banner {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.banner-link {
+    padding: 0px 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    color: white;
+
+    &:hover {
+        &::after {
+            line-height: 50%;
+            content: "Me";
+            font-size: 1rem;
+        }
+    }
+}
