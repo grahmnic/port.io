@@ -5,6 +5,7 @@ import './App.css';
 import Window from './components/window/window.js';
 import Banner from './components/banner/banner.js';
 import Taskbar from './components/taskbar/taskbar.js';
+import IntroWindow from './components/intro-window/intro-window.js';
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
         <Window 
           width="80%" 
           height="30rem"
-        />
+          title="Portfolio.exe">
+          <IntroWindow />
+        </Window>
       </div>
 
       <div className="footer">
