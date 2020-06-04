@@ -2,38 +2,23 @@ import React from 'react';
 import './App.css';
 
 // COMPONENTS
-import Window from './components/window/window.js';
-import Banner from './components/banner/banner.js';
-import Taskbar from './components/taskbar/taskbar.js';
-import IntroWindow from './components/intro-window/intro-window.js';
+import StartView from './views/start.js';
 
-function App() {
-  return (
-    <div className="root">
-      <Taskbar />
-      <div className="header">
-        <Banner />
-      </div>
-      <div className="body">
-        <Window 
-          width="80%" 
-          height="30rem"
-          title="Portfolio.exe">
-          <IntroWindow />
-        </Window>
-      </div>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-      <div className="footer">
-      </div>
+    this.state = {
+      view: <StartView />
+    };
+  }
 
-      {/* <div className="header">
-      </div>
-      <div className="content">
-      </div>
-      <div className="footer">
-      </div> */}
-    </div>
-  );
+
+  render() {
+    return (
+      this.state.view
+    );
+  }
 }
 
 export default App;
