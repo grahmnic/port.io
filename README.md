@@ -1,5 +1,4 @@
-Going to be redoing my portfolio.
-[https://trello.com/b/t9kwuwyX/portfolio2020] (View the Trello board here.)
+Going to be redoing my portfolio. Trello: https://trello.com/b/t9kwuwyX/portfolio2020
 
 ## Port.io
 
