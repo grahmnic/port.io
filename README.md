@@ -1,5 +1,5 @@
 Going to be redoing my portfolio.
-[https://trello.com/b/t9kwuwyX/portfolio2020](View the Trello board here.)
+[https://trello.com/b/t9kwuwyX/portfolio2020] (View the Trello board here.)
 
 ## Port.io
 
@@ -22,7 +22,7 @@ Here are some of the features, either planned or already implemented.
 ### Installing Port.io
 
 **This is what you came for.** You can see boring me portrayed in a creative light.
-<br />
+<br /><br /><br />
 
 If you aren’t satisfied with my portfolio, you can `eject` at any time by clicking the `x` at the right of the tab. 
 
