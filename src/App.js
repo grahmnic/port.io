@@ -16,7 +16,9 @@ class App extends React.Component {
 
   render() {
     return (
-      this.state.view
+      <div className="app-root">
+        {this.state.view}
+      </div>
     );
   }
 }
