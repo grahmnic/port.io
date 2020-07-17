@@ -13,10 +13,17 @@
 
 .modalHandle {
     font-size: 0.8rem;
+    font-weight: bold;
     letter-spacing: 0.5px;
-    padding: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 5px;
     box-sizing: border-box;
-    width: 100%;
+    border: 2px solid;
+    border-left-color: rgb(100, 100, 100);
+    border-top-color: rgb(100, 100, 100);
+    border-right-color: #bdbdbd;
+    border-bottom-color: #bdbdbd;
+    background-color: #bfbfbf;
+    margin: 2px;
     position: relative;
     background:#000080;
     color:#FFF;
@@ -39,8 +46,8 @@
     flex: 1;
     padding: 5px;
     box-sizing: border-box;
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1.25rem;
+    width: 1.25rem;
     margin-right: 5px;
     cursor: pointer;
     display: flex;
@@ -53,7 +60,7 @@
     border-right-color: rgb(51, 42, 42);
     border-left-color: #a6a6a6;
     border-top-color: #a6a6a6;
-    background-color: blanchedalmond;
+    background-color: #c5c5c5;
 }
 
 .modalBtn:first-child {

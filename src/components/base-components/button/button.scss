@@ -1,0 +1,51 @@
+@import '../../../themes/main.scss';
+//@import '../../../themes/variables.scss';
+
+.btn-wrapper {
+    border: 1px solid;
+    border-left-color: #FFFFFF;
+    border-top-color: #FFFFFF;
+    border-right-color: black;
+    border-bottom-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-inner {
+    border: 1px solid;
+    border-left-color: #DFDFDF;
+    border-top-color: #DFDFDF;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    background: #C0C0C0;
+    width: 100%;
+    height: 100%;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    padding: 0px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include highlight-off
+
+    div::first-letter {
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+}
+
+.btn-wrapper:active {
+    border-right-color: #DFDFDF;
+    border-bottom-color: #DFDFDF;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-width: 2px;
+}
+
+.btn-inner:active {
+    border: 1px dotted black !important;
+    width: 95%;
+    height: 90%;
+}
