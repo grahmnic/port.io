@@ -28,11 +28,24 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    @include highlight-off
+    @include highlight-off;
 
-    div::first-letter {
+    div {
+        flex: 1;
+    }
+
+    :nth-child(1) {
+        margin-right: 5px;
+        text-align: right;
+    }
+
+    :nth-child(2)::first-letter {
         text-decoration: underline;
         text-transform: uppercase;
+    }
+
+    :nth-child(3) {
+        margin-left: 5px;
     }
 }
 

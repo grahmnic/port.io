@@ -3,4 +3,24 @@
     height: 100%;
     box-sizing: border-box;
     padding: 8px 3px;
+    display: flex;
+}
+
+.setup-left {
+    flex: 2;
+}
+
+.setup-right {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.setup-radio {
+    flex: 8;
+}
+
+.setup-btns {
+    flex: 1;
+    display: flex;
 }

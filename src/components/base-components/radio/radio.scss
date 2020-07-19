@@ -1,0 +1,81 @@
+@import '../../../themes/main.scss';
+
+.radio-wrapper {
+    padding: 10px 20px;
+}
+
+.radio-btn {
+    display: flex;
+    cursor: pointer;
+    font-size: 0.9rem;
+    @include highlight-off;
+    align-items: center;
+    margin: 5px 0px;
+
+    p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        &:first-letter {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.radio-input {
+    flex: 1;
+    max-width: 2rem;
+    display: flex;
+    align-items: center;
+
+    input {
+        position: fixed;
+        opacity: 0;
+        pointer-events: none;
+
+        &:checked {
+            ~ .checkmark {
+                .dot {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Create a custom radio button */
+.checkmark {
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    border-top-color: #898989;
+    border-left-color: #898989;
+    border-bottom-color: #F1F1F1;
+    border-right-color: #F1F1F1;
+    border-radius: 100%;
+
+    > div {
+        height: 90%;
+        width: 90%;
+        border-radius: 100%;
+        border: 0.75px solid;
+        border-top-color: #262626;
+        border-left-color: #262626;
+        border-bottom-color: #F1F1F1;
+        border-right-color: #F1F1F1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .dot {
+            display: none;
+            width: 40%;
+            height: 40%;
+            border-radius: 100%;
+            background: black;
+        }
+    }
+}

@@ -18,7 +18,9 @@ export default class Button extends React.Component {
                 height: this.props.height
             }}>
                 <div className="btn-inner">
-                    <div>{this.props.text}</div>
+                    <div>{this.props.before}</div>
+                    <div>{this.props.children}</div>
+                    <div>{this.props.after}</div>
                 </div>
             </div>
         );
