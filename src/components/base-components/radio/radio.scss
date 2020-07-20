@@ -1,29 +1,32 @@
 @import '../../../themes/main.scss';
 
 .radio-wrapper {
-    padding: 10px 20px;
+    padding: 10px 0px;
 }
 
 .radio-btn {
     display: flex;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     @include highlight-off;
     align-items: center;
-    margin: 5px 0px;
 
-    p {
-        margin-block-start: 0;
-        margin-block-end: 0;
+    .radio-name {
+        flex: 1;
         &:first-letter {
             text-decoration: underline;
         }
     }
+
+    .radio-description {
+        flex: 3;
+        border: 1px solid transparent;
+    }
 }
 
-
 .radio-input {
-    flex: 1;
+    flex-basis: auto;
+    margin-right: 0.5rem;
     max-width: 2rem;
     display: flex;
     align-items: center;
@@ -43,9 +46,6 @@
     }
 }
 
-
-
-/* Create a custom radio button */
 .checkmark {
     height: 0.7rem;
     width: 0.7rem;

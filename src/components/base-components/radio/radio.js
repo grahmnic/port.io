@@ -21,10 +21,12 @@ export default class Radio extends React.Component {
                     <input className="radio-check" type="radio" name="radio" value={e.value} onChange={this.handleChange}/>
                     <span className="checkmark"><div><div className="dot"></div></div></span>
                 </div>
-                <p style={{
-                    width: "fit-content", 
-                    border: parseInt(this.state.value) === e.value ? "1px dotted black" : "1px dotted transparent"
-                }}>{e.name}</p>
+                <div className="radio-name">
+                    <div style={{width: "fit-content", border: parseInt(this.state.value) === e.value ? "1px dotted black" : "1px dotted transparent"}}>
+                        {e.name}
+                    </div>                    
+                </div>
+                {e.description ? <div className="radio-description">{e.description}</div> : null}
             </label>
         );
 

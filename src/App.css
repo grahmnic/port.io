@@ -1,4 +1,10 @@
 .app-root {
     width: 100vw;
     height: 100vh;
+    font-family: 'DOS';
 }
+
+@font-face {
+    font-family: 'DOS';
+    src: url('./assets/fonts/Perfect\ DOS\ VGA\ 437.ttf');
+  }

@@ -12,10 +12,9 @@
 }
 
 .modalHandle {
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 1rem;
     letter-spacing: 0.5px;
-    padding: 0px 0px 0px 5px;
+    padding: 0px 0px 0px 10px;
     box-sizing: border-box;
     border: 2px solid;
     border-left-color: rgb(100, 100, 100);
@@ -23,7 +22,7 @@
     border-right-color: #bdbdbd;
     border-bottom-color: #bdbdbd;
     background-color: #bfbfbf;
-    margin: 2px;
+    margin: 2px 2px 0px 2px;
     position: relative;
     background:#000080;
     color:#FFF;
@@ -53,7 +52,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.65rem;
+    font-size: 0.5rem;
     border-width: 3px;
     border-style: solid;
     border-bottom-color: #444;
@@ -64,7 +63,7 @@
 }
 
 .modalBtn:first-child {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
 }
 
 // .modalBtn:hover {
@@ -75,6 +74,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    flex-grow: 1;
 }
 
 .wrapper {

@@ -2,16 +2,27 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding: 8px 3px;
+    padding: 10px 10px 15px 15px;
     display: flex;
 }
 
 .setup-left {
-    flex: 2;
+    flex: 6;
+    background-color: #ffffbc;
+    background-image: url('../../assets/images/subtle-dots.png');
+    border: 1px solid;
+    border-top-color: #848561;
+    border-left-color: #848561;
+    border-right-color: #FFFFFE;
+    border-bottom-color: #FFFFFE;
+}
+
+.setup-spacing {
+    flex: 1;
 }
 
 .setup-right {
-    flex: 3;
+    flex: 8;
     display: flex;
     flex-direction: column;
 }
