@@ -8,7 +8,6 @@ export default class Radio extends React.Component {
     }
 
     handleChange = (e) => {
-        console.log("TEST");
         this.setState({
             value: e.target.value
         });

@@ -1,6 +1,9 @@
+@import '../../themes/main.scss';
+
 .setup-wrapper {
     width: 100%;
     height: 100%;
+    min-width: 100%;
     box-sizing: border-box;
     padding: 10px 10px 15px 15px;
     display: flex;
@@ -15,10 +18,49 @@
     border-left-color: #848561;
     border-right-color: #FFFFFE;
     border-bottom-color: #FFFFFE;
+    padding: 15px;
+    @include border-box;
+    display: flex;
+
+    div:nth-child(1) {
+        flex: auto;
+    }
+
+    div:nth-child(2) {
+        flex-grow: 1;
+        margin-left: 20px;
+        font-size: 1rem;
+        color: rgb(124, 42, 42);
+    }
+}
+
+.setup-body {
+    border-bottom: 1px solid #9D9F9F;
+    border-right: 1px solid #9D9F9F;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    padding: 10px;
+    font-size: 0.9rem;
+    position: relative;
+    margin-top: 1rem;
+
+    span {
+        position: absolute;
+        width: fit-content;
+        padding: 0px 5px;
+        background: #BFBFBF;
+        top: -0.5rem;
+        left: 1rem;
+    }
+
+    a {
+        display: block;
+        width: fit-content;
+    }
 }
 
 .setup-spacing {
-    flex: 1;
+    flex: 0.5;
 }
 
 .setup-right {
@@ -34,4 +76,11 @@
 .setup-btns {
     flex: 1;
     display: flex;
+    justify-content: flex-end;
+}
+
+.setup-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: none;
 }

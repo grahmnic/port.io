@@ -6,14 +6,9 @@ export default class Button extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        this.width = this.props.width;
-        this.height = this.props.height;
-    }
-
     render() {
         return (
-            <div onClick={this.props.callback} className="btn-wrapper" style={{
+            <div onClick={this.props.mode ? null : this.props.callback} className={`btn-wrapper ${this.props.mode ? 'btn-disabled' : null}`} style={{
                 width: this.props.width,
                 height: this.props.height
             }}>
