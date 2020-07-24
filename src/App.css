@@ -8,3 +8,7 @@
     font-family: 'DOS';
     src: url('./assets/fonts/Perfect\ DOS\ VGA\ 437.ttf');
   }
+
+  .loaders-wrapper {
+      position: absolute;
+  }

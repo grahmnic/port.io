@@ -1,14 +1,15 @@
 import React from 'react';
 import './setup-window.scss';
 import setupImg from '../../assets/images/icons/3d-computer.ico';
+import setupGif from '../../assets/images/earth.gif';
 import Button from '../base-components/button/button.js';
 import Radio from '../base-components/radio/radio.js';
-import { thisExpression } from '@babel/types';
-import { isUndefined } from 'util';
+
+import LoaderContext from '../../contexts/LoaderContext.js';
 
 const setupOptions = [
-    {name: "Express", value: 0, description: "View my portfolio how it was intended to be viewed."},
-    {name: "Potato", value: 1, description: "View a potato version of my portfolio without the clutter."}
+    {name: "Express", value: 1, description: "View my portfolio how it was intended to be viewed."},
+    {name: "Potato", value: 2, description: "View a potato version of my portfolio without the clutter."}
 ];
 
 export default class SetupWindow extends React.Component {
@@ -17,17 +18,39 @@ export default class SetupWindow extends React.Component {
         this.radio = React.createRef();
     }
 
+    static contextType = LoaderContext;
+
     confirm = () => {
-        alert(this.radio.current.state.value);
+        if(this.radio.current.state.value === "1") {
+            this.context.createLoader({
+                width: "fit-content",
+                height: "",
+                title: "PortDOS Startup",
+                modules: [
+                    {module: "Phase 1", value: 6},
+                    {module: "Phase 2", value: 6},
+                    {module: "Phase 3", value: 12}
+                ],
+                length: 24
+            });
+        }
     }
 
     render() {
         return (
             <div className="setup-wrapper">
                 <div className="setup-left">
-                    <div><img src={setupImg} alt="3d-computer"/></div>
                     <div>
-                        Welcome to the PortDOS a0.1 Setup Wizard! To begin, please select which version of PortDOS you would like to view.<br/><br/>Once you select a version, click Next to proceed.
+                        <img src={setupImg} alt="3d-computer"/>
+                    </div>
+                    <div>
+                        If you're looking for an experienced fullstackoverflow dev, you've come to the right place. 
+                        <br/><br/>
+                        <div><span>D</span><span>o</span><span>w</span><span>n</span><span>l</span><span>o</span><span>a</span><span>d</span></div>
+                        <div><span>p</span><span>o</span><span>r</span><span>t</span><span style={{fontSize: "2rem"}}>&#8228;</span><span>i</span><span>o</span> <span>n</span><span>o</span><span>w</span><span>!</span></div>
+                    </div>
+                    <div>
+                        <img src={setupGif} alt="spinning-earth"/>
                     </div>
                 </div>
                 <div className="setup-spacing"></div>
@@ -42,6 +65,9 @@ export default class SetupWindow extends React.Component {
                     </div>
                     <div className="setup-radio">
                         <Radio ref={this.radio} direction="column" options={setupOptions}/>
+                    </div>
+                    <div className="setup-desc">
+                        Welcome to the PortDOS a0.1 Setup Wizard! To begin, please select which version of PortDOS you would like to view.<br/><br/>Once you select a version, click Next to proceed.
                     </div>
                     <div className="setup-btns">
                         <Button width="6rem" height="1.5rem" before={"<"} mode={true}>Back</Button>

@@ -5,7 +5,10 @@ import Window from '../components/window/window.js';
 import SetupWindow from '../components/setup-window/setup-window.js';
 
 export default class StartView extends React.Component {
-    
+    test = (id) => {
+        alert(id);
+    }
+
     render() {
         return (
             <div className="start-root">

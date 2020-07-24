@@ -1,5 +1,7 @@
 Going to be redoing my portfolio. Trello: https://trello.com/b/t9kwuwyX/portfolio2020
 
+> ![Most Recent Snapshot](/src/assets/images/readme.JPG)
+
 ## Port.io
 
 I liked the minimalistic/retro style of the original portfolio.<br />

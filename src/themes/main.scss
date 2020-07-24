@@ -14,3 +14,40 @@
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+@mixin rainbow-text($duration) {
+  animation: rainbowText $duration linear 0s infinite;
+}
+
+@mixin rainbow-text-bounce($duration) {
+  animation: rainbowText, bounce;
+  animation-duration: $duration;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from   { transform: scale(1,1) translateY(0); }
+  10%  { transform: scale(1.1,.9) translateY(0); }
+  30%  { transform: scale(.9,1.1) translateY(-0.7rem); }
+  50%  { transform: scale(1,1)    translateY(0); }
+  57%  { transform: scale(1,1)    translateY(-0.1rem); }
+  64%  { transform: scale(1,1)    translateY(0); }
+  100% { transform: scale(1,1)    translateY(0); }
+}
+
+@keyframes rainbowText {
+  from {
+    color: #0000ff;
+  }
+  10% {
+    color: #0099ff;
+  }
+  50% {
+    color: #00ff00;
+  }
+  75% {
+    color: #ff0080;
+  }
+  100% {
+    color: #6666ff;
+  }
+}
