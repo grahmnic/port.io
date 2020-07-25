@@ -1,11 +1,19 @@
 import React from 'react';
 import './setup-window.scss';
+
+// ASSETS
 import setupImg from '../../assets/images/icons/3d-computer.ico';
 import setupGif from '../../assets/images/earth.gif';
+
+// COMPONENTS
 import Button from '../base-components/button/button.js';
 import Radio from '../base-components/radio/radio.js';
 
-import LoaderContext from '../../contexts/LoaderContext.js';
+// CONTEXT
+import LoaderViewContext from '../../contexts/LoaderViewContext.js';
+
+// VIEWS
+import DesktopView from '../../views/desktop.js';
 
 const setupOptions = [
     {name: "Express", value: 1, description: "View my portfolio how it was intended to be viewed."},
@@ -18,11 +26,11 @@ export default class SetupWindow extends React.Component {
         this.radio = React.createRef();
     }
 
-    static contextType = LoaderContext;
+    static contextType = LoaderViewContext;
 
     confirm = () => {
         if(this.radio.current.state.value === "1") {
-            this.context.createLoader({
+            this.context.loaderContext.createLoader({
                 width: "fit-content",
                 height: "",
                 title: "PortDOS Startup",
@@ -31,9 +39,15 @@ export default class SetupWindow extends React.Component {
                     {module: "Phase 2", value: 6},
                     {module: "Phase 3", value: 12}
                 ],
-                length: 24
+                length: 24,
+                callback: this.loadDesktop
             });
         }
+    }
+
+    loadDesktop = (id) => {
+        this.context.loaderContext.removeLoader(id);
+        this.context.viewContext.changeView(<DesktopView/>);
     }
 
     render() {

@@ -2,12 +2,16 @@ import React from 'react';
 import './App.css';
 
 // COMPONENTS
-import StartView from './views/start.js';
 import LoaderWindow from './components/loader-window/loader-window.js';
 import Window from './components/window/window.js';
 
+// VIEWS
+import StartView from './views/start.js';
+
 // CONTEXTS
 import LoaderContext from './contexts/LoaderContext.js';
+import ViewContext from './contexts/ViewContext.js';
+import LoaderViewCombined from './contexts/LoaderViewCombined.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,6 +23,12 @@ class App extends React.Component {
     };
   }
 
+  changeView = (view) => {
+    this.setState({
+      view: view
+    });
+  }
+
   addLoader = (loader) => {
     loader.index = loader.title + this.state.loaders.length;
     this.setState({
@@ -27,6 +37,7 @@ class App extends React.Component {
   }
 
   removeLoader = (index) => {
+    console.log("REMOVEING");
     this.setState({
       loaders: this.state.loaders.filter(x => x.index !== index)
     });
@@ -35,7 +46,7 @@ class App extends React.Component {
   render() {
     const loaders = this.state.loaders.map(loader => 
       <Window key={loader.index} width={loader.width} height={loader.height} title={loader.title}>
-          <LoaderWindow modules={loader.modules} length={loader.length} callback={this.removeLoader} index={loader.index}/>
+          <LoaderWindow modules={loader.modules} length={loader.length} callback={loader.callback} index={loader.index}/>
       </Window>  
     );
 
@@ -44,11 +55,18 @@ class App extends React.Component {
         <div className="loaders-wrapper">
           {loaders}
         </div>
-        <LoaderContext.Provider value={{
-          createLoader: this.addLoader
+        <ViewContext.Provider value={{
+          changeView: this.changeView
         }}>
-          {this.state.view}
-        </LoaderContext.Provider>
+          <LoaderContext.Provider value={{
+            createLoader: this.addLoader,
+            removeLoader: this.removeLoader
+          }}>
+            <LoaderViewCombined>
+              {this.state.view}
+            </LoaderViewCombined>
+          </LoaderContext.Provider>
+        </ViewContext.Provider>
       </div>
     );
   }
